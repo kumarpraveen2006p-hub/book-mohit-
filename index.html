@@ -1,463 +1,437 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Writing & Publishing Services</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Base Resets & Variables */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Writing & Publishing Services</title>
 
-        :root {
-            --bg-dark: #090a0f;
-            --card-bg: #11141e;
-            --gold-primary: #facc15;
-            --gold-metallic: linear-gradient(135deg, #ffe57f 0%, #d4af37 50%, #996515 100%);
-            --gold-glow: rgba(250, 204, 21, 0.35);
-            --text-light: #f8fafc;
-            --text-muted: #cbd5e1;
-        }
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-        body {
-            background-color: var(--bg-dark);
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px 12px;
-            color: var(--text-light);
-            background-image: 
-                radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(250, 204, 21, 0.04) 0%, transparent 40%);
-        }
+fbq('init', '1407101218157493');
+fbq('track', 'PageView');
 
-        /* Outer Card Container */
-        .card-container {
-            background-color: var(--card-bg);
-            border: 2px solid var(--gold-primary);
-            box-shadow: 0 0 30px var(--gold-glow), inset 0 0 15px rgba(250, 204, 21, 0.1);
-            border-radius: 24px;
-            width: 100%;
-            max-width: 420px;
-            padding: 32px 20px 28px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
+function trackContact() {
+    if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
+    }
+}
+</script>
 
-        /* Gold Shimmer Line Effect */
-        .card-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            animation: shine 6s infinite;
-        }
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1407101218157493&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
 
-        @keyframes shine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Logo Styling */
-        .logo-box {
-            background-color: #ffffff;
-            width: 165px;
-            height: 165px;
-            margin: 0 auto 22px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(250, 204, 21, 0.3);
-            border: 2px solid #fef08a;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .circle-logo {
-            background: var(--gold-metallic);
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #1a0f00;
-            font-weight: 800;
-            line-height: 1.15;
-            padding: 10px;
-            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
-        }
+:root {
+    --bg-dark: #090a0f;
+    --card-bg: #11141e;
+    --gold-primary: #facc15;
+    --gold-metallic: linear-gradient(135deg,#ffe57f 0%,#d4af37 50%,#996515 100%);
+    --gold-glow: rgba(250,204,21,0.35);
+    --text-light: #f8fafc;
+    --text-muted: #cbd5e1;
+}
 
-        .logo-icon {
-            font-size: 22px;
-            margin-bottom: 2px;
-        }
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 12px;
+    color: var(--text-light);
+    background-image:
+        radial-gradient(circle at 50% 20%,rgba(212,175,55,0.08) 0%,transparent 50%),
+        radial-gradient(circle at 80% 80%,rgba(250,204,21,0.04) 0%,transparent 40%);
+}
 
-        .logo-title {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
+.card-container {
+    background-color: var(--card-bg);
+    border: 2px solid var(--gold-primary);
+    box-shadow: 0 0 30px var(--gold-glow),inset 0 0 15px rgba(250,204,21,0.1);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 20px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
 
-        .logo-main {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
+.card-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);
+    animation: shine 6s infinite;
+    pointer-events: none;
+}
 
-        .logo-sub {
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+@keyframes shine {
+    0% {left:-100%;}
+    20% {left:100%;}
+    100% {left:100%;}
+}
 
-        .logo-badge {
-            font-size: 8px;
-            margin-top: 4px;
-            background: #111827;
-            color: #facc15;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
+.logo-box {
+    background-color: #fff;
+    width: 165px;
+    height: 165px;
+    margin: 0 auto 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5),0 0 15px rgba(250,204,21,0.3);
+    border: 2px solid #fef08a;
+}
 
-        /* Headings */
-        .main-heading {
-            font-family: 'Playfair Display', serif;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-            line-height: 1.3;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
+.circle-logo {
+    background: var(--gold-metallic);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1a0f00;
+    font-weight: 800;
+    line-height: 1.15;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.6),inset 0 -2px 4px rgba(0,0,0,0.4);
+}
 
-        .star {
-            color: var(--gold-primary);
-            font-size: 18px;
-            vertical-align: middle;
-            text-shadow: 0 0 8px var(--gold-glow);
-        }
+.logo-icon {font-size:22px;margin-bottom:2px;}
+.logo-title {font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+.logo-main {font-family:'Playfair Display',serif;font-size:20px;text-transform:uppercase;font-weight:800;letter-spacing:.5px;}
+.logo-sub {font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1px;}
+.logo-badge {font-size:8px;margin-top:4px;background:#111827;color:#facc15;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:.5px;}
 
-        .sub-heading {
-            color: var(--gold-primary);
-            font-size: 12.5px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+.main-heading {
+    font-family:'Playfair Display',serif;
+    color:#fff;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.5px;
+    margin-bottom:8px;
+    line-height:1.3;
+    text-shadow:0 2px 4px rgba(0,0,0,.5);
+}
 
-        /* Badge Styling */
-        .badge-female {
-            background: linear-gradient(90deg, #facc15 0%, #eab308 100%);
-            color: #0f172a;
-            font-weight: 800;
-            font-size: 13px;
-            padding: 9px 18px;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.25);
-            width: 100%;
-            max-width: 360px;
-        }
+.star {
+    color:var(--gold-primary);
+    font-size:18px;
+    vertical-align:middle;
+    text-shadow:0 0 8px var(--gold-glow);
+}
 
-        /* CTA Button Styling */
-        .telegram-btn {
-            background: linear-gradient(135deg, #ffe57f 0%, #facc15 50%, #d4af37 100%);
-            color: #0f172a;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 15.5px;
-            padding: 14px 20px;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 24px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid #fef08a;
-            width: 100%;
-            box-shadow: 0 0 20px var(--gold-glow), 0 4px 10px rgba(0, 0, 0, 0.4);
-            animation: pulse-glow 2.5s infinite;
-        }
+.sub-heading {
+    color:var(--gold-primary);
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.8px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
 
-        @keyframes pulse-glow {
-            0% {
-                box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
-            }
-            100% {
-                box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
-            }
-        }
+.badge-female {
+    background:linear-gradient(90deg,#facc15 0%,#eab308 100%);
+    color:#0f172a;
+    font-weight:800;
+    font-size:13px;
+    padding:9px 18px;
+    border-radius:50px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(250,204,21,.25);
+    width:100%;
+    max-width:360px;
+}
 
-        .telegram-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            background: linear-gradient(135deg, #ffffff 0%, #facc15 100%);
-            box-shadow: 0 0 30px rgba(250, 204, 21, 0.7);
-        }
+.telegram-btn {
+    background:linear-gradient(135deg,#ffe57f 0%,#facc15 50%,#d4af37 100%);
+    color:#0f172a;
+    text-decoration:none;
+    font-weight:800;
+    font-size:15.5px;
+    padding:14px 20px;
+    border-radius:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:24px;
+    transition:all .3s ease;
+    cursor:pointer;
+    border:1px solid #fef08a;
+    width:100%;
+    box-shadow:0 0 20px var(--gold-glow),0 4px 10px rgba(0,0,0,.4);
+    animation:pulse-glow 2.5s infinite;
+}
 
-        .telegram-icon {
-            font-size: 17px;
-            transform: rotate(-20deg);
-            display: inline-block;
-        }
+@keyframes pulse-glow {
+    0%,100% {box-shadow:0 0 15px rgba(250,204,21,.3);}
+    50% {box-shadow:0 0 25px rgba(250,204,21,.6);}
+}
 
-        /* Features List */
-        .features-list {
-            list-style: none;
-            text-align: left;
-            max-width: 350px;
-            margin: 0 auto 26px auto;
-            padding: 0 5px;
-        }
+.telegram-btn:hover {
+    transform:translateY(-2px) scale(1.02);
+    background:linear-gradient(135deg,#fff 0%,#facc15 100%);
+    box-shadow:0 0 30px rgba(250,204,21,.7);
+}
 
-        .features-list li {
-            font-size: 12.5px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.4px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
+.telegram-icon {
+    font-size:17px;
+    transform:rotate(-20deg);
+    display:inline-block;
+}
 
-        .features-list li:last-child {
-            margin-bottom: 0;
-        }
+.features-list {
+    list-style:none;
+    text-align:left;
+    max-width:350px;
+    margin:0 auto 26px;
+    padding:0 5px;
+}
 
-        .features-list span.icon {
-            margin-right: 12px;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
+.features-list li {
+    font-size:12.5px;
+    font-weight:700;
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    letter-spacing:.4px;
+    color:var(--text-muted);
+    line-height:1.4;
+}
 
-        /* Bottom CTA */
-        .join-now {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: #ffffff;
-            text-shadow: 0 0 12px rgba(250, 204, 21, 0.6), 0 0 25px rgba(250, 204, 21, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            padding-top: 5px;
-        }
+.features-list li:last-child {margin-bottom:0;}
+.features-list span.icon {margin-right:12px;font-size:16px;flex-shrink:0;}
 
-        .join-now:hover {
-            color: var(--gold-primary);
-            transform: scale(1.04);
-        }
+.join-now {
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:#fff;
+    text-shadow:0 0 12px rgba(250,204,21,.6),0 0 25px rgba(250,204,21,.3);
+    cursor:pointer;
+    transition:all .3s ease;
+    text-transform:uppercase;
+    padding-top:5px;
+}
 
-        /* Modal Popup Styling */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            padding: 20px;
-        }
+.join-now:hover {
+    color:var(--gold-primary);
+    transform:scale(1.04);
+}
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+.modal-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    opacity:0;
+    visibility:hidden;
+    transition:all .3s ease;
+    padding:20px;
+}
 
-        .modal-card {
-            background: #111827;
-            border: 2px solid var(--gold-primary);
-            border-radius: 20px;
-            padding: 25px 20px;
-            max-width: 360px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 30px var(--gold-glow);
-            transform: scale(0.8);
-            transition: transform 0.3s ease;
-        }
+.modal-overlay.active {
+    opacity:1;
+    visibility:visible;
+}
 
-        .modal-overlay.active .modal-card {
-            transform: scale(1);
-        }
+.modal-card {
+    background:#111827;
+    border:2px solid var(--gold-primary);
+    border-radius:20px;
+    padding:25px 20px;
+    max-width:360px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 0 30px var(--gold-glow);
+    transform:scale(.8);
+    transition:transform .3s ease;
+}
 
-        .modal-card h3 {
-            color: var(--gold-primary);
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+.modal-overlay.active .modal-card {transform:scale(1);}
 
-        .modal-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+.modal-card h3 {
+    color:var(--gold-primary);
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    margin-bottom:10px;
+}
 
-        .modal-close-btn {
-            background: var(--gold-primary);
-            color: #0f172a;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
+.modal-card p {
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:20px;
+    line-height:1.5;
+}
 
-        .modal-close-btn:hover {
-            background: #ffe57f;
-        }
-    </style>
+.modal-close-btn {
+    background:var(--gold-primary);
+    color:#0f172a;
+    border:none;
+    padding:10px 24px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:background .2s ease;
+}
+
+.modal-close-btn:hover {background:#ffe57f;}
+</style>
 </head>
+
 <body>
 
-    <!-- Main Card Container -->
-    <div class="card-container">
-        <!-- Circular Top Logo inside Box -->
-        <div class="logo-box">
-            <div class="circle-logo">
-                <span class="logo-icon">📖</span>
-                <span class="logo-title">BESTSELLER</span>
-                <span class="logo-main">AUTHOR</span>
-                <span class="logo-sub">PUBLISHING</span>
-                <span class="logo-badge">EXPERT COACH</span>
-            </div>
-        </div>
+<div class="card-container">
 
-        <!-- Main Title -->
-        <h1 class="main-heading">
-            <span class="star">&#9733;</span> BOOK WRITING & PUBLISHING <span class="star">&#9733;</span>
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="sub-heading">INDIA'S #1 AUTHOR CREATION HUB 📚🚀</p>
-
-        <!-- Badge -->
-        <div class="badge-female">
-            <span>✒️</span>
-            <span>TURN YOUR STORY INTO A BOOK</span>
-            <span>📖</span>
-        </div>
-
-        <!-- Main Interactive CTA Button -->
-        <button class="telegram-btn" id="telegramBtn">
-            <span class="telegram-icon">&#10148;</span>
-            <span>Join Telegram / Contact Coach</span>
-            <span class="telegram-icon">&#10148;</span>
-        </button>
-
-        <!-- Features Bullet Points -->
-        <ul class="features-list">
-            <li><span class="icon">&#9989;</span> COMPLETE GHOSTWRITING & EDITING</li>
-            <li><span class="icon">📚</span> AMAZON & PAPERBACK PUBLISHING</li>
-            <li><span class="icon">🎨</span> CUSTOM COVER DESIGN & FORMATTING</li>
-            <li><span class="icon">📈</span> 100% ROYALTY & MARKETING SUPPORT</li>
-        </ul>
-
-        <!-- Bottom Glowing Action Text -->
-        <div class="join-now" id="joinNowText">
-            BECOME A PUBLISHED AUTHOR NOW !!
+    <div class="logo-box">
+        <div class="circle-logo">
+            <span class="logo-icon">📖</span>
+            <span class="logo-title">BESTSELLER</span>
+            <span class="logo-main">AUTHOR</span>
+            <span class="logo-sub">PUBLISHING</span>
+            <span class="logo-badge">EXPERT COACH</span>
         </div>
     </div>
 
-    <!-- Interactive Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-card">
-            <h3>Author Coaching Hub</h3>
-            <p id="modalMessage">Connecting you to our Author Consultant on Telegram...</p>
-            <button class="modal-close-btn" id="modalCloseBtn">Got it!</button>
-        </div>
+    <h1 class="main-heading">
+        <span class="star">&#9733;</span>
+        BOOK WRITING &amp; PUBLISHING
+        <span class="star">&#9733;</span>
+    </h1>
+
+    <p class="sub-heading">INDIA'S #1 AUTHOR CREATION HUB 📚🚀</p>
+
+    <div class="badge-female">
+        <span>✒️</span>
+        <span>TURN YOUR STORY INTO A BOOK</span>
+        <span>📖</span>
     </div>
 
-    <!-- JavaScript Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const telegramBtn = document.getElementById('telegramBtn');
-            const joinNowText = document.getElementById('joinNowText');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalMessage = document.getElementById('modalMessage');
-            const modalCloseBtn = document.getElementById('modalCloseBtn');
+    <button class="telegram-btn" id="telegramBtn" type="button">
+        <span class="telegram-icon">&#10148;</span>
+        <span>Join Telegram / Contact Coach</span>
+        <span class="telegram-icon">&#10148;</span>
+    </button>
 
-            // Function to show custom popup instead of standard browser alert
-            function showPopup(message, redirectUrl) {
-                modalMessage.innerText = message;
-                modalOverlay.classList.add('active');
-                
-                if (redirectUrl) {
-                    setTimeout(function() {
-                        window.open(redirectUrl, '_blank');
-                    }, 1200);
-                }
-            }
+    <ul class="features-list">
+        <li><span class="icon">&#9989;</span> COMPLETE GHOSTWRITING &amp; EDITING</li>
+        <li><span class="icon">📚</span> AMAZON &amp; PAPERBACK PUBLISHING</li>
+        <li><span class="icon">🎨</span> CUSTOM COVER DESIGN &amp; FORMATTING</li>
+        <li><span class="icon">📈</span> 100% ROYALTY &amp; MARKETING SUPPORT</li>
+    </ul>
 
-            // Close modal handler
-            modalCloseBtn.addEventListener('click', function() {
-                modalOverlay.classList.remove('active');
-            });
+    <div class="join-now" id="joinNowText">
+        BECOME A PUBLISHED AUTHOR NOW !!
+    </div>
 
-            // Close modal on outer click
-            modalOverlay.addEventListener('click', function(e) {
-                if (e.target === modalOverlay) {
-                    modalOverlay.classList.remove('active');
-                }
-            });
+</div>
 
-            // Button click actions
-            telegramBtn.addEventListener('click', function() {
-                showPopup("Redirecting you to our official Telegram channel for Book Writing & Publishing Consultation...", "https://t.me");
-            });
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+        <h3>Author Coaching Hub</h3>
+        <p id="modalMessage">
+            Connecting you to our Author Consultant on Telegram...
+        </p>
+        <button class="modal-close-btn" id="modalCloseBtn" type="button">Got it!</button>
+    </div>
+</div>
 
-            joinNowText.addEventListener('click', function() {
-                showPopup("Ready to publish your book? Click 'Join Telegram / Contact Coach' above to start your author journey today!");
-            });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
 
-            console.log("Book Writing & Publishing Landing Page Loaded Successfully!");
-        });
-    </script>
+    const telegramBtn = document.getElementById('telegramBtn');
+    const joinNowText = document.getElementById('joinNowText');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    const telegramLink = 'https://t.me/+xa5edV0eahViNTFl';
+
+    function showPopup(message) {
+        modalMessage.innerText = message;
+        modalOverlay.classList.add('active');
+    }
+
+    modalCloseBtn.addEventListener('click', function() {
+        modalOverlay.classList.remove('active');
+    });
+
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+
+    // Track Contact and open the supplied Telegram invite link
+    telegramBtn.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+            fbq('track', 'Contact');
+        }
+
+        showPopup(
+            'Redirecting you to our Telegram channel for Book Writing & Publishing Consultation...'
+        );
+
+        window.open(telegramLink, '_blank');
+    });
+
+    joinNowText.addEventListener('click', function() {
+        showPopup(
+            "Ready to publish your book? Click 'Join Telegram / Contact Coach' above to get started!"
+        );
+    });
+
+    console.log('Book Writing & Publishing Landing Page Loaded Successfully!');
+});
+</script>
+
 </body>
 </html>
